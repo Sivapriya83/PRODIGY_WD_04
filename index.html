@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids' Navigation Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-item">🏠 Home</a></li>
+            <li><a href="#fun-zone" class="nav-item">🎉 Fun Zone</a></li>
+            <li><a href="#learn" class="nav-item">📚 Learn</a></li>
+            <li><a href="#contact" class="nav-item">📞 Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="section">
+        <h1>Welcome to Our Magical World</h1>
+        <p>Scroll down to discover more!</p>
+    </section>
+    <section id="fun-zone" class="section">
+        <h1>Fun Zone</h1>
+        <p>Enjoy games, stories, and more!</p>
+    </section>
+    <section id="learn" class="section">
+        <h1>Learn</h1>
+        <p>Explore educational activities!</p>
+    </section>
+    <section id="contact" class="section">
+        <h1 class="animated-heading">Contact Us</h1>
+        <p class="subheading">We’d love to hear from you!</p>
+        <div class="contact-details">
+            <p><strong>Email:</strong> <a href="mailto:sivapriyajsivan@gmail.com" class="contact-link">sivapriyajsivan@gmail.com</a></p>
+            <p><strong>Address:</strong> Trivandrum, Kerala</p>
+            <p><strong>Contact Number:</strong> <a href="tel:+919876543210" class="contact-link">+91 98765 43210</a></p>
+        </div>
+        <div class="contact-footer">
+            <!-- Send Message Button -->
+            <button class="contact-btn" onclick="sendMessage()">Send Us a Message ✉️</button>
+        </div>
+    </section>
+    
+    <footer id="footer">
+        <div class="footer-content">
+            <p>Built with <span class="heart">❤️</span> by <strong>Sivapriya J Sivan</strong></p>
+            <div class="footer-interactions">
+                <button id="play-button">🎵 Play Music</button>
+                <button id="stop-button" disabled>⏹️ Stop Music</button>
+                <button id="balloon-button">🎈 Release Balloons!</button>
+            </div>
+            <canvas id="balloon-canvas"></canvas>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+    <script>
+        function sendMessage() {
+            // Create a subject and body for the email
+            const subject = "Message from Contact Us Section";
+            const body = "Hello, I have a query from the Contact Us page.";
+
+            // Create the mailto link with recipient, subject, and body
+            const mailtoLink = `mailto:sivapriyajsivan@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open the default email client (Gmail if set as default)
+            window.location.href = mailtoLink;
+        }
+    </script>
+</body>
+</html>

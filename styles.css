@@ -1,0 +1,397 @@
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fef9e7;
+    overflow-x: hidden;
+}
+
+/* Section Styles */
+.section {
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Home Section */
+#home {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Fun Zone Section */
+#fun-zone {
+    background: url('https://www.transparenttextures.com/patterns/argyle.png'), linear-gradient(135deg, #ffecd2, #fcb69f);
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+/* Learn Section */
+#learn {
+    background: linear-gradient(45deg, #a8edea, #fed6e3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: 150% 150%;
+    animation: gradientShift 7s ease infinite;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    animation: gradientShift 10s linear infinite;
+}
+
+/* Text Styling */
+h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Animation for Gradient Backgrounds */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navigation Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff7979, #ffda79);
+    color: white;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
+    animation: rainbowScroll 5s infinite linear;
+}
+
+/* Nav Menu Styles */
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #ffda79;
+    transition: transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+.nav-item:hover {
+    color: #2c3e50;
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8), 0 0 25px rgba(255, 165, 0, 0.6);
+}
+
+/* Additional Hover Animation */
+.nav-item:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    top: 100%;
+    left: 0;
+    animation: trail 0.5s linear infinite;
+}
+
+@keyframes rainbowScroll {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Rainbow Trail Effect */
+@keyframes trail {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Click Effect */
+.nav-item:active {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Bounce Animation for Section Headers */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.bounce {
+    animation: bounce 1s ease-in-out;
+}
+
+/* Confetti Effect for Fun Zone */
+@keyframes confetti {
+    0% { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+    50% { background: linear-gradient(135deg, #fcb69f, #ffecd2); }
+    100% { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+}
+
+.confetti {
+    animation: confetti 2s ease infinite;
+}
+
+/* Floating Animation for Section Text */
+.section h1, .section p {
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Sparkling Stars for Learn Section */
+#learn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+    opacity: 0.3;
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* Contact Section Animated Icons */
+#contact::before {
+    content: "📧 📱 📨";
+    font-size: 3rem;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    animation: floatIcons 5s linear infinite alternate;
+}
+
+@keyframes floatIcons {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+/* Footer Styles */
+#footer {
+    background: linear-gradient(135deg, #ffd1dc, #fcb69f);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    color: #333;
+    font-family: 'Comic Sans MS', sans-serif;
+    border-top: 5px solid #ff7979;
+}
+
+.footer-content p {
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+}
+
+.footer-content .heart {
+    color: red;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.footer-interactions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer-interactions button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ffda79;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.footer-interactions button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.footer-interactions button:disabled {
+    background: #ccc;
+    color: #777;
+    cursor: not-allowed;
+}
+
+/* Balloon Canvas Styles */
+/* Balloon Canvas Styles */
+#balloon-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Ensures balloons are above other content */
+}
+
+/* Contact Us Section */
+#contact {
+    background: linear-gradient(135deg, #d4fc79, #96e6a1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    animation: gradientShift 10s linear infinite;
+    padding: 50px 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Animated Heading */
+.animated-heading {
+    font-size: 3rem;
+    margin: 0;
+    color: #2c3e50;
+    animation: bounceIn 1.5s ease-in-out;
+}
+
+/* Subheading Style */
+.subheading {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Contact Details Box */
+.contact-details {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #2c3e50;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Links with Animation */
+.contact-details a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Button Style */
+.contact-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover {
+    background-color: #ff4500;
+    transform: scale(1.1);
+}
+
+/* Footer Section Styling */
+.contact-footer {
+    margin-top: 30px;
+}
+
+/* Animation Effects */
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Background Animation for Contact Section */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
